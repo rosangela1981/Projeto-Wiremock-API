@@ -1,0 +1,18 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/api/cars",
+    "bodyPatterns": [
+      { "matchesJsonPath": "$[?(@.brand)]" },
+      { "matchesJsonPath": "$[?(@.model == 'gol')]" },
+      { "matchesJsonPath": "$[?(@.year)]" }
+    ]
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": "{ \"message\": \"Car successfully registered!\", \"id\": 4 }"
+  }
+}
